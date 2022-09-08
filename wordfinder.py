@@ -1,5 +1,6 @@
 """Word Finder: finds random words from a dictionary."""
 from random import randint, random
+from timeit import repeat
 
 
 class WordFinder:
@@ -25,9 +26,10 @@ class RandomWordFinder(WordFinder):
     def __init__(self, file_name):
         super().__init__(file_name)
 
-    def get_words(self):
-        return super().get_words()
-
     def random(self):
-        print(self.random)
-        return super().random()
+        random_word = super().random()
+        if random_word == '' or random_word.startswith('#'):
+
+        else:
+            return random_word
+        # return super().random()
