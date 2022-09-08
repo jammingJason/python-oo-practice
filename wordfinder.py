@@ -1,4 +1,13 @@
-"""Word Finder: finds random words from a dictionary."""
+"""Word Finder: finds random words from a dictionary.
+
+    >>> rwf = RandomWordFinder('more_words.txt")
+
+    >>> rwf.random()
+    100
+
+
+
+"""
 from random import randint, random
 from timeit import repeat
 
@@ -28,8 +37,8 @@ class RandomWordFinder(WordFinder):
 
     def random(self):
         random_word = super().random()
-        if random_word == '' or random_word.startswith('#'):
-
+        while random_word == '' or random_word.startswith('#'):
+            random_word = super().random()
         else:
             return random_word
         # return super().random()
